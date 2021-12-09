@@ -2,6 +2,7 @@ package AdventureGame.VisH317.github.io;
 
 public class consumable implements item {
     private double[] buffs;
+    private int test;
     private long durability;
 
     public void consumable(double healthBuff, double attackBuff, double defenseBuff, long durability) {
