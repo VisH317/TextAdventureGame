@@ -9,10 +9,12 @@ public class weapon implements item {
     public long damage;
     public long durability;
 
-    public void weapon(String weaponName, long damage, long durability) {
+    public weapon(String weaponName, long damage, long durability) {
         this.weaponName = weaponName;
         this.damage = damage;
-        this.durability = durability;
+        if(durability >= -1) {
+            this.durability = durability;
+        }
     }
 
     public String printStats() {
@@ -20,8 +22,8 @@ public class weapon implements item {
     }
 
     public void use(Character ch) {
-        ch.reduceHealth(this.damage);
-        this.durability--;
+        ch.addHealth(-this.damage);
+//        this.durability--;
     }
 
     public boolean checkBroken() {
